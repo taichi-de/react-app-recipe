@@ -6,12 +6,12 @@ this is my work of a [tutorial](https://youtu.be/U9T6YkEDkMo)
 
 In the project directory, you can run:
 
-### `yarn start`
+`yarn start`
 
-### `yarn test`
+`yarn test`
 
-### `yarn build`
+`yarn build`
 
-### `yarn eject`
+`yarn eject`
 
-### `yarn build` fails to minify
+`yarn build` fails to minify
