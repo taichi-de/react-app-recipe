@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import Recipe from './Recipe';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Recipe from "./Recipe";
+import "./App.css";
 
 const App = () => {
   const APP_ID = "6a590d97";
-  const APP_KEX = "d9c91774f1dc3786b87403f6ea4113ae";
+  const APP_KEY = "d9c91774f1dc3786b87403f6ea4113ae";
 
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState('');
-  const [query, setQuery] = useState('');
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("chicken");
 
 
   useEffect(() => {
@@ -17,26 +17,26 @@ const App = () => {
 
   const getRecipes = async () => {
     const response = await fetch(
-      'https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}'
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     const data = await response.json();
     setRecipes(data.hits);
     console.log(data.hits);
-  }
+  };
 
   const updateSearch = e => {
     setSearch(e.target.value);
-  }
+  };
 
   const getSearch = e => {
     e.preventDefault();
-    setQuery(setSearch);
+    setQuery(search);
     setSearch('');
-  }
+  };
 
-  return(
+  return (
     <div className="App">
-      <h1>Hello React</h1>
+      <h1 className="app-title">Bon Appétit</h1>
       <form onSubmit={getSearch} className="search-form">
         <input
           className="search-bar"

@@ -1,38 +1,44 @@
 .App {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-title {
+  font-size: 50px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #f1f1f1;
+  margin: 0;
+  padding-top: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-form {
+  margin: 60px auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar {
+  width: 50%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-button {
+  background:#f3f3f3;
+  border: none;
+  padding: 10px 20px;
+  color: #c4a;
+  font-weight: 700;
+  border-radius: 0 5px 5px 0;
+}
+
+.recipes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: left;
 }
