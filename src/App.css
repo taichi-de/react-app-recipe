@@ -28,12 +28,16 @@
 }
 
 .search-button {
-  background:#f3f3f3;
+  background:#f4f4f4;
   border: none;
   padding: 10px 20px;
   color: #c4a;
   font-weight: 700;
   border-radius: 0 5px 5px 0;
+}
+.search-button:hover {
+  background:#c3a400;
+  color: #fff;
 }
 
 .recipes {

@@ -43,6 +43,7 @@ const App = () => {
           type="text"
           value={search}
           onChange={updateSearch}
+          placeholder="ex: tomato"
         />
         <button className="search-button" type="submit">
           Search
