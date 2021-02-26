@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState
+} from "react";
 import Recipe from "./Recipe";
 import "./App.css";
 
 const App = () => {
   const APP_ID = "6a590d97";
-  const APP_KEY = "d9c91774f1dc3786b87403f6ea4113ae";
+  const APP_KEY = process.env.REACT_APP_EDAMAM_APIKEY
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
@@ -34,33 +37,53 @@ const App = () => {
     setSearch('');
   };
 
-  return (
-    <div className="App">
-      <h1 className="app-title">Bon Appétit</h1>
-      <form onSubmit={getSearch} className="search-form">
-        <input
-          className="search-bar"
-          type="text"
-          value={search}
-          onChange={updateSearch}
-          placeholder="ex: tomato"
+  return ( <
+    div className = "App" >
+    <
+    h1 className = "app-title" > Bon Appétit < /h1> <
+    form onSubmit = {
+      getSearch
+    }
+    className = "search-form" >
+    <
+    input className = "search-bar"
+    type = "text"
+    value = {
+      search
+    }
+    onChange = {
+      updateSearch
+    }
+    placeholder = "ex: tomato" /
+    >
+    <
+    button className = "search-button"
+    type = "submit" >
+    Search <
+    /button> < /
+    form > <
+    div className = "recipes" > {
+      recipes.map(recipe => ( <
+        Recipe key = {
+          recipe.recipe.label
+        }
+        title = {
+          recipe.recipe.label
+        }
+        calories = {
+          recipe.recipe.calories
+        }
+        image = {
+          recipe.recipe.image
+        }
+        ingredients = {
+          recipe.recipe.ingredients
+        }
         />
-        <button className="search-button" type="submit">
-          Search
-        </button>
-      </form>
-      <div className="recipes">
-        {recipes.map(recipe => (
-          <Recipe
-            key={recipe.recipe.label}
-            title={recipe.recipe.label}
-            calories={recipe.recipe.calories}
-            image={recipe.recipe.image}
-            ingredients={recipe.recipe.ingredients}
-          />
-        ))}
-      </div>
-    </div>
+      ))
+    } <
+    /div> < /
+    div >
   );
 };
 
